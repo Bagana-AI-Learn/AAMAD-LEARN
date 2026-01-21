@@ -34,10 +34,11 @@ AAMAD organizes work into three phases: **Define**, **Build**, and **Deliver**, 
 ### Phase 1: Define
 - Market Research Document (MRD)
 - Product Requirements Document (PRD)
+- System Architecture Document (SAD)
 - Context handoff artifacts
 
 ### Phase 2: Build
-- System Architecture Document (SAD)
+- Setup and environment configuration
 - Frontend/Backend implementation
 - Integration and QA
 
@@ -90,6 +91,14 @@ AAMAD/
   - Non-functional requirements, UX design, success metrics
   - Implementation strategy and go-to-market plan
 
+- **System Architecture Document (SAD)**: [`project-context/1.define/sad.md`](project-context/1.define/sad.md)
+  - MVP architecture philosophy and principles
+  - Multi-agent system specification (4 core agents: Trend, Audience, Influencer, Performance)
+  - Logical, process/runtime, deployment, and data architecture views
+  - Quality attributes and architectural decisions
+  - Explicit deferrals to future phases
+  - Traceability to PRD/MRD requirements
+
 #### Key Features
 
 - **Multi-Agent Architecture**: Specialized agents for trend detection, audience modeling, influencer scoring, content strategy, performance forecasting, and continuous learning
@@ -104,7 +113,7 @@ AAMAD/
 - Targets influencer agencies and performance marketing teams
 - Focus on ROI-centric campaign planning system
 
-For detailed specifications, see the [MRD](project-context/1.define/mrd-bagana-ai.md) and [PRD](project-context/1.define/prd-bagana-ai.md) documents.
+For detailed specifications, see the [MRD](project-context/1.define/mrd-bagana-ai.md), [PRD](project-context/1.define/prd-bagana-ai.md), and [SAD](project-context/1.define/sad.md) documents.
 
 ---
 
@@ -116,7 +125,11 @@ The Product Manager persona (`@product-mgr`) conducts prompt-driven discovery an
 
 - **Market Research**: Generate Market Research Document (MRD) using `.cursor/templates/mrd-template.md`
 - **Requirements**: Generate Product Requirements Document (PRD) using `.cursor/templates/prd-template.md`
-- **Context Summary**: Create comprehensive context handoff artifacts for technical teams
+
+The System Architect persona (`@system-arch`) creates the technical architecture:
+
+- **Architecture**: Generate System Architecture Document (SAD) using `.cursor/templates/sad-template.md`
+- **MVP Focus**: Use `*create-sad --mvp` for minimal viable architecture with explicit deferrals
 
 Phase 1 outputs are stored in `project-context/1.define/` and provide the foundation for all subsequent development phases.
 
@@ -124,11 +137,10 @@ Phase 1 outputs are stored in `project-context/1.define/` and provide the founda
 
 Each role is embodied by an agent persona, defined in `.cursor/agents/`. Phase 2 is executed by running each epic in sequence:
 
-- **Architecture**: Generate solution architecture document (`sad.md`)
 - **Setup**: Scaffold environment, install dependencies, and document (`setup.md`)
 - **Frontend**: Build UI + placeholders, document (`frontend.md`)
 - **Backend**: Implement backend, document (`backend.md`)
-- **Integration**: Wire up chat flow, verify, document (`integration.md`)
+- **Integration**: Wire up workflows, verify, document (`integration.md`)
 - **Quality Assurance**: Test end-to-end, log results and limitations (`qa.md`)
 
 Artifacts are versioned and stored in `project-context/2.build` for traceability.
