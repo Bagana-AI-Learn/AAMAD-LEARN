@@ -99,6 +99,20 @@ AAMAD/
   - Explicit deferrals to future phases
   - Traceability to PRD/MRD requirements
 
+- **Frontend Functional Specification**: [`project-context/2.build/frontend-functional-spec.md`](project-context/2.build/frontend-functional-spec.md)
+  - Campaign planning dashboard requirements
+  - Input, Run, Results, and History sections specification
+  - React/TypeScript component structure
+  - Lightweight FSM implementation (idle → running → done)
+  - Stub services for campaign planning workflow
+  - Spec Sync checklist for maintaining documentation
+
+- **Frontend Implementation**: [`project-context/2.build/frontend.md`](project-context/2.build/frontend.md)
+  - React/TypeScript application implementation details
+  - Component architecture and state management
+  - Stub services and integration points
+  - Testing notes and known limitations
+
 #### Key Features
 
 - **Multi-Agent Architecture**: Specialized agents for trend detection, audience modeling, influencer scoring, content strategy, performance forecasting, and continuous learning
@@ -113,7 +127,7 @@ AAMAD/
 - Targets influencer agencies and performance marketing teams
 - Focus on ROI-centric campaign planning system
 
-For detailed specifications, see the [MRD](project-context/1.define/mrd-bagana-ai.md), [PRD](project-context/1.define/prd-bagana-ai.md), and [SAD](project-context/1.define/sad.md) documents.
+For detailed specifications, see the [MRD](project-context/1.define/mrd-bagana-ai.md), [PRD](project-context/1.define/prd-bagana-ai.md), [SAD](project-context/1.define/sad.md), and [Frontend Functional Spec](project-context/2.build/frontend-functional-spec.md) documents.
 
 ---
 
@@ -138,7 +152,7 @@ Phase 1 outputs are stored in `project-context/1.define/` and provide the founda
 Each role is embodied by an agent persona, defined in `.cursor/agents/`. Phase 2 is executed by running each epic in sequence:
 
 - **Setup**: Scaffold environment, install dependencies, and document (`setup.md`)
-- **Frontend**: Build UI + placeholders, document (`frontend.md`)
+- **Frontend**: Build UI + placeholders, document (`frontend.md` and `frontend-functional-spec.md`)
 - **Backend**: Implement backend, document (`backend.md`)
 - **Integration**: Wire up workflows, verify, document (`integration.md`)
 - **Quality Assurance**: Test end-to-end, log results and limitations (`qa.md`)
