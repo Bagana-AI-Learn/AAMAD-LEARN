@@ -1,19 +1,16 @@
 # AAMAD – AI-Assisted Multi-Agent Application Development Framework
 
-**AAMAD** is an open, production-grade framework for building, deploying, and evolving multi-agent applications using best context engineering practices.  
-It systematizes research-driven planning, modular AI agent workflows, and rapid MVP/devops pipelines for enterprise-ready AI solutions.
+**AAMAD** is an open, production-grade framework for building, deploying, and evolving multi-agent applications using best context engineering practices. It systematizes research-driven planning, modular AI agent workflows, and rapid MVP/devops pipelines for enterprise-ready AI solutions.
 
 ---
 
 ## Table of Contents
 
 - [What is AAMAD?](#what-is-aamad)
-- [AAMAD phases at a glance](#aamad-phases-at-a-glance)
+- [AAMAD Phases at a Glance](#aamad-phases-at-a-glance)
 - [Repository Structure](#repository-structure)
+- [Active Projects](#active-projects)
 - [How to Use the Framework](#how-to-use-the-framework)
-- [Phase 1: Define Workflow (Product Manager)](#phase-1-define-workflow-product-manager)
-- [Phase 2: Build Workflow (Multi-Agent)](#phase-2-build-workflow-multi-agent)
-- [Core Concepts](#core-concepts)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -21,8 +18,7 @@ It systematizes research-driven planning, modular AI agent workflows, and rapid 
 
 ## What is AAMAD?
 
-AAMAD is a context engineering framework based on best practices in AI-assisted coding and multi-agent system development methodologies.  
-It enables teams to:
+AAMAD is a context engineering framework based on best practices in AI-assisted coding and multi-agent system development methodologies. It enables teams to:
 
 - Launch projects with autonomous or collaborative AI agents
 - Rapidly prototype MVPs with clear context boundaries
@@ -31,171 +27,127 @@ It enables teams to:
 
 ---
 
-## AAMAD phases at a glance
+## AAMAD Phases at a Glance
 
-AAMAD organizes work into three phases: Define, Build, and Deliver, each with clear artifacts, personas, and rules to keep development auditable and reusable. 
-The flow begins by defining context and templates, proceeds through multi‑agent build execution, and finishes with operational delivery.
+AAMAD organizes work into three phases: **Define**, **Build**, and **Deliver**, each with clear artifacts, personas, and rules to keep development auditable and reusable.
 
-```mermaid
-flowchart LR
-  %% AAMAD phases overview
-  subgraph P1[DEFINE]
-    D1H[ PERSONA ]:::hdr --> D1L["• Product Manager<br/>(@product-mgr)"]:::list
-    D2H[TEMPLATES]:::hdr --> D2L["• Market Research<br/>• PRD"]:::list
-  end
+### Phase 1: Define
+- Market Research Document (MRD)
+- Product Requirements Document (PRD)
+- Context handoff artifacts
 
-  subgraph P2[BUILD]
-    B1H[AGENTS]:::hdr --> B1L["• Project Mgr<br/>• System Architect<br/>• Frontend Eng<br/>• Backend Eng<br/>• Integration Eng<br/>• QA Eng"]:::list
-    B2H[RULES]:::hdr --> B2L["• core<br/>• development‑workflow<br/>• adapter‑crewai"]:::list
-  end
+### Phase 2: Build
+- System Architecture Document (SAD)
+- Frontend/Backend implementation
+- Integration and QA
 
-  subgraph P3[DELIVER]
-    L1H[AGENTS]:::hdr --> L1L["• DevOps Eng"]:::list
-    L2H[RULES]:::hdr --> L2L["• continuous‑deploy<br/>• hosting‑environment<br/>• access‑control"]:::list
-  end
-
-  P1 --> P2 --> P3
-
-  classDef hdr fill:#111,stroke:#555,color:#fff;
-  classDef list fill:#222,stroke:#555,color:#fff;
-``` 
-
-- Phase 1: (Define)
-    - Product Manager persona (`@product-mgr`) conducts prompt-driven discovery and context setup, supported by templates for Market Research Document (MRD) and Product Requirements Document (PRD), to standardize project scoping.
-
-- Phase 2: (Build)
-    - Multi‑agent execution by Project Manager, System Architect, Frontend Engineer, Backend Engineer, Integration Engineer, and QA Engineer, governed by core, development‑workflow, and CrewAI‑specific rules.
-
-- Phase 3: (Deliver)
-    - DevOps Engineer focuses on release and runtime concerns using rules for continuous deployment, hosting environment definitions, and access control.
-
+### Phase 3: Deliver
+- Deployment artifacts
+- Operational documentation
+- Handoff materials
 
 ---
 
 ## Repository Structure
 
-    aamad/
-    ├─ .cursor/
-    │ ├─ agents/ # Agent persona markdown files (definitions & actions)
-    │ ├─ prompts/ # Parameterized and phase-specific agent prompts
-    │ ├─ rules/ # Architecture, workflow, and epics rules/patterns
-    │ └─ templates/ # Generation templates for research, PRD, SAD, etc.
-    ├─ project-context/
-    │ ├─ 1.define/ # Project-specific PRD, SAD, research reports, etc.
-    │ ├─ 2.build/ # Output artifacts for setup, frontend, backend, etc.
-    │ └─ 3.deliver/ # QA logs, deploy configs, release notes, etc.
-    ├─ CHECKLIST.md # Step-by-step execution guide
-    └─ README.md # This file
+```
+AAMAD/
+├── .cursor/                 # Cursor IDE configuration
+│   ├── agents/             # Agent persona definitions
+│   ├── rules/              # Development rules and guidelines
+│   ├── templates/          # Document templates (MRD, PRD, SAD)
+│   └── prompts/            # Reusable prompt templates
+├── project-context/
+│   ├── 1.define/           # Phase 1 artifacts (MRD, PRD)
+│   ├── 2.build/            # Phase 2 artifacts (implementation docs)
+│   └── 3.deliver/          # Phase 3 artifacts (deployment, ops)
+├── scripts/                # Utility scripts
+└── src/                    # Framework source code
+```
 
+---
 
-**Framework artifacts** (in `.cursor/`) are reusable for any new project.  
-**Project-context** contains all generated and instance-specific documentation for each app built with AAMAD.
+## Active Projects
+
+### Bagana AI: AI-Driven Content Intelligence Engine for Influencer Agencies
+
+**Bagana AI** is a multi-agent content intelligence platform that predicts influencer campaign performance before money is spent, enabling agencies to make data-driven planning decisions with explainable recommendations.
+
+#### Project Documentation
+
+- **Market Research Document (MRD)**: [`project-context/1.define/mrd-bagana-ai.md`](project-context/1.define/mrd-bagana-ai.md)
+  - Comprehensive market analysis and opportunity assessment
+  - Technical feasibility and requirements analysis
+  - User experience and workflow analysis
+  - Production and operations requirements
+  - Innovation and differentiation analysis
+
+- **Product Requirements Document (PRD)**: [`project-context/1.define/prd-bagana-ai.md`](project-context/1.define/prd-bagana-ai.md)
+  - Executive summary with problem statement and solution overview
+  - Market context and user analysis
+  - Technical requirements and multi-agent architecture (CrewAI)
+  - Functional requirements (P0/P1/P2 priorities)
+  - Non-functional requirements, UX design, success metrics
+  - Implementation strategy and go-to-market plan
+
+#### Key Features
+
+- **Multi-Agent Architecture**: Specialized agents for trend detection, audience modeling, influencer scoring, content strategy, performance forecasting, and continuous learning
+- **Predictive Intelligence**: Forecast campaign outcomes before execution
+- **ROI-Oriented**: Ties recommendations to business outcomes (CPA, CPL, revenue)
+- **Explainable Recommendations**: Provides rationale and confidence scores for all suggestions
+
+#### Market Context
+
+- Global influencer marketing spend projected to exceed $24B+ by 2027
+- 50-60% of campaigns underperform due to poor planning
+- Targets influencer agencies and performance marketing teams
+- Focus on ROI-centric campaign planning system
+
+For detailed specifications, see the [MRD](project-context/1.define/mrd-bagana-ai.md) and [PRD](project-context/1.define/prd-bagana-ai.md) documents.
 
 ---
 
 ## How to Use the Framework
 
-1. **Clone this repository.**
-   ```bash
-   git clone https://github.com/synaptic-ai-consulting/AAMAD
-   ```
-2. Confirm `.cursor/` contains the full agent, prompt, and rule set.
-3. Follow the `CHECKLIST.md` to run using multi-agent autonomy — typically, via CursorAI or another coding agent platform.
-4. Each agent persona executes its epic(s), producing separate markdown artifacts and code as they go.
-5. Review, test, and launch the MVP, then iterate or scale with additional features.
+### Phase 1: Define Stage (Product Manager)
 
----
+The Product Manager persona (`@product-mgr`) conducts prompt-driven discovery and context setup:
 
-## Install via pip / uv
-
-Instead of cloning, you can install the full artifact bundle from PyPI.
-
-### Using pip
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install aamad
-aamad init --dest /path/to/your/project
-```
-
-### Using uv
-
-```bash
-uv venv
-uv pip install aamad
-uv run aamad init --dest /path/to/your/project
-```
-
-Flags:
-- `--dest PATH` (defaults to current directory)
-- `--overwrite` (allow replacing existing files)
-- `--dry-run` (preview what would be written)
-
-You can inspect the package contents without extracting them via `aamad bundle-info --verbose` (or `uv run aamad bundle-info --verbose`).
-
----
-
-## Phase 1: Define Stage (Product Manager)
-
-The Product Manager persona (`@product-mgr`) conducts prompt-driven discovery and context setup to standardize project scoping:
-
-- **Market Research:** Generate Market Research Document (MRD) using `.cursor/templates/mrd-template.md`
-- **Requirements:** Generate Product Requirements Document (PRD) using `.cursor/templates/prd-template.md`
-- **Context Summary:** Create comprehensive context handoff artifacts for technical teams
-- **Validation:** Ensure completeness of market analysis, user personas, feature requirements, and success metrics
+- **Market Research**: Generate Market Research Document (MRD) using `.cursor/templates/mrd-template.md`
+- **Requirements**: Generate Product Requirements Document (PRD) using `.cursor/templates/prd-template.md`
+- **Context Summary**: Create comprehensive context handoff artifacts for technical teams
 
 Phase 1 outputs are stored in `project-context/1.define/` and provide the foundation for all subsequent development phases.
 
----
+### Phase 2: Build Stage (Multi-Agent)
 
-## Phase 2: Build Stage (Multi-Agent)
+Each role is embodied by an agent persona, defined in `.cursor/agents/`. Phase 2 is executed by running each epic in sequence:
 
-Each role is embodied by an agent persona, defined in `.cursor/agents/`.  
-Phase 2 is executed by running each epic in sequence after completing Phase 1:
-
-- **Architecture:** Generate solution architecture document (`sad.md`)
-- **Setup:** Scaffold environment, install dependencies, and document (`setup.md`)
-- **Frontend:** Build UI + placeholders, document (`frontend.md`)
-- **Backend:** Implement backend, document (`backend.md`)
-- **Integration:** Wire up chat flow, verify, document (`integration.md`)
-- **Quality Assurance:** Test end-to-end, log results and limitations (`qa.md`)
+- **Architecture**: Generate solution architecture document (`sad.md`)
+- **Setup**: Scaffold environment, install dependencies, and document (`setup.md`)
+- **Frontend**: Build UI + placeholders, document (`frontend.md`)
+- **Backend**: Implement backend, document (`backend.md`)
+- **Integration**: Wire up chat flow, verify, document (`integration.md`)
+- **Quality Assurance**: Test end-to-end, log results and limitations (`qa.md`)
 
 Artifacts are versioned and stored in `project-context/2.build` for traceability.
 
----
+### Quick Start
 
-## Core Concepts
-
-- **Persona-driven development:** Each workflow is owned and documented by a clear AI agent persona with a single responsibility principle.
-- **Context artifacts:** All major actions, decisions, and documentation are stored as markdown artifacts, ensuring explainability and reproducibility.
-- **Parallelizable epics:** Big tasks are broken into epics, making development faster and more autonomous while retaining control over quality.
-- **Reusability:** Framework reusable for any project—simply drop in your PRD/SAD and let the agents execute.
-- **Open, transparent, and community-driven:** All patterns and artifacts are readable, auditable, and extendable.
+1. Review the [Execution Checklist](CHECKLIST.md) for step-by-step guidance
+2. Start with Phase 1: Define your project context using the Product Manager persona
+3. Proceed to Phase 2: Build your application using specialized agent personas
+4. Follow the modular development workflow for isolated, testable modules
 
 ---
 
 ## Contributing
 
-Contributions are welcome!  
-- Open an issue for bugs/feature ideas/improvements.
-- Submit pull requests with extended templates, new agent personas, or bug fixes.
-- Help evolve the knowledge base and documentation for greater adoption.
-- When modifying `.cursor/` or `project-context/`, run `python scripts/update_bundle.py` to refresh the packaged artifact bundle before publishing.
+Contributions are welcome! Please see our contributing guidelines and code of conduct for details.
 
 ---
 
 ## License
 
-Licensed under Apache License 2.0.
-
-> Why Apache-2.0
->    Explicit patent grant and patent retaliation protect maintainers and users from patent disputes, which is valuable for AI/ML methods, agent protocols, and orchestration logic.
->    Permissive terms enable proprietary or closed-source usage while requiring attribution and change notices, which encourages integration into enterprise stacks.
->    Compared to MIT/BSD, Apache-2.0 clarifies modification notices and patent rights, reducing legal ambiguity for contributors and adopters.
-
----
-
-> For detailed step-by-step Phase 2 execution, see [CHECKLIST.md].  
-> For advanced reference and prompt engineering, see `.cursor/templates/` and `.cursor/rules/`.
-
+This project is part of the AAMAD framework. See [LICENSE](LICENSE) for details.

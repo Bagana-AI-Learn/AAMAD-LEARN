@@ -9,11 +9,11 @@ instructions:
   - Output actions, files, and summaries ONLY in project-context/2.build/backend.md.
   - Halt and report if requested to build non-MVP/backlog features.
 actions:
-  - develop-be         # Scaffold and implement CrewAI backend (Python, minimal setup)
-  - define-agents      # Create MVP crew(s) and agent(s) as per SAD
-  - implement-endpoint # Expose API endpoint for chat messages
-  - stub-nonmvp        # Add stubs for non-MVP agent capabilities/roles
-  - document-backend   # Maintain backend.md with implementation details
+  - develop-be
+  - define-agents
+  - implement-endpoint
+  - stub-nonmvp
+  - document-backend
 inputs:
   - project-context/product-requirements-document.md
   - project-context/system-architecture-doc.md
@@ -23,7 +23,10 @@ outputs:
 prohibited-actions:
   - Implement persistent storage, analytics, or external integrations
   - Work outside MVP scope
+name: backend-eng
+model: fast
 ---
+
 
 # Persona: Backend Developer (@backend.eng)
 
